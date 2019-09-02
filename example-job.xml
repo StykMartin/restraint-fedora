@@ -1,0 +1,32 @@
+<job retention_tag="scratch">
+  <whiteboard>Reserve Workflow provision of distro Fedora-31-20190822.n.0 on any system for 86400 seconds</whiteboard>
+  <recipeSet priority="Urgent">
+    <recipe whiteboard="" role="RECIPE_MEMBERS" ks_meta="harness='restraint-rhts' no_default_harness_repo" kernel_options="" kernel_options_post="">
+      <autopick random="false"/>
+      <watchdog panic="ignore"/>
+      <packages/>
+      <ks_appends/>
+      <repos>
+        <repo name="myharness" url="https://example.org/restraint_f31/"/>
+      </repos>
+      <distroRequires>
+        <and>
+          <distro_family op="=" value="Fedora31"/>
+          <distro_variant op="=" value="Everything"/>
+          <distro_name op="=" value="Fedora-31-20190822.n.0"/>
+          <distro_arch op="=" value="x86_64"/>
+        </and>
+      </distroRequires>
+      <hostRequires>
+        <system_type value="Machine"/>
+      </hostRequires>
+      <partitions/>
+      <task name="/distribution/check-install" role="STANDALONE"/>
+      <task name="/distribution/reservesys" role="STANDALONE">
+        <params>
+          <param name="RESERVETIME" value="86400"/>
+        </params>
+      </task>
+    </recipe>
+  </recipeSet>
+</job>
