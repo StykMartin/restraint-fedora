@@ -29,4 +29,6 @@ There are several ways how you can leverage this repo
     ```
     **Explanation**: [Beaker](https://github.com/beaker-project/beaker) is looking into all repositories (compose + custom one) to find test harness defined by variable *harness* in ks_meta.
     In this case, we still want to use *restraint(-rhts)*. ks_meta variable *no_default_harness_repo* is **required**, otherwise, scheduler will abort provisioning (due to missing test harness).  
-  * Profit!
+  * Profit! 
+  
+*You can check [Example job](example-job.xml) if you are running into issues or contact me :)*
